@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #1a237e;
-    --secondary-color: #42a5f5;
-    --accent-color: #ff4081;
-    --background-color: #f5f6fa;
-    --text-color: #333333;
+    --primary-color: #0071e3;
+    --secondary-color: #86868b;
+    --background-color: #ffffff;
+    --text-color: #1d1d1f;
+    --accent-color: #2997ff;
 }
 
 * {
@@ -13,73 +13,69 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
-/* Header & Navigation */
-header {
+.glass-nav {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background: rgba(26, 35, 126, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-nav {
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
-.logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
+.nav-links {
     display: flex;
     gap: 2rem;
     list-style: none;
 }
 
-nav a {
-    color: white;
+.nav-links a {
+    color: var(--text-color);
     text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--secondary-color);
-}
-
 .login-btn {
+    background: var(--primary-color);
+    color: white !important;
     padding: 0.5rem 1.5rem;
-    border: 2px solid white;
-    border-radius: 5px;
+    border-radius: 980px;
     transition: all 0.3s ease;
 }
 
-.login-btn:hover {
-    background: white;
-    color: var(--primary-color);
-}
-
-/* Hero Section */
 .hero {
-    position: relative;
     height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -90,31 +86,41 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--accent-color);
+.cta-primary {
+    background: var(--primary-color);
     color: white;
+    padding: 1rem 2rem;
+    border-radius: 980px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 980px;
+    text-decoration: none;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
+
+/* Voeg de rest van de styling toe voor features, companies en footer */
 
 /* Companies Section */
 .companies {

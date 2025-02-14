@@ -6,91 +6,98 @@
     <title>Pjotters-Company | Innovatie en ondernemerschap</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Pjotters-Company</div>
-            <ul>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">Pjotters</div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#onze-bedrijven">Onze Bedrijven</a></li>
+                <li><a href="#onze-bedrijven">Bedrijven</a></li>
                 <li><a href="#over-ons">Over Ons</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="login.html" class="login-btn">Inloggen</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <section id="home" class="hero">
-        <video autoplay muted loop id="hero-video">
+        <video autoplay muted loop id="hero-video" playsinline>
             <source src="bestanden/Video/ZipZop-5.mp4" type="video/mp4">
         </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Welkom bij Pjotters-Company</h1>
-            <p>Innovatie en ondernemerschap onder één dak</p>
-            <a href="register.html" class="cta-button">Start Gratis</a>
+            <h1>Innovatie begint hier</h1>
+            <p>Ontdek de toekomst van technologie met Pjotters-Company</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="cta-primary">Start Gratis</a>
+                <a href="#learn-more" class="cta-secondary">Meer Info</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="material-icons">rocket_launch</span>
+                <h3>Innovatief Platform</h3>
+                <p>Vooruitstrevende technologie voor jouw bedrijf</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-icons">security</span>
+                <h3>Veilig & Betrouwbaar</h3>
+                <p>State-of-the-art beveiliging voor jouw data</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-icons">support_agent</span>
+                <h3>24/7 Support</h3>
+                <p>Altijd en overal ondersteuning</p>
+            </div>
         </div>
     </section>
 
     <section id="onze-bedrijven" class="companies">
-        <h2>Onze Bedrijven</h2>
+        <h2>Onze Innovaties</h2>
         <div class="companies-grid">
             <div class="company-card">
-                <div class="company-logo">
-                    <img src="bestanden/Images/zipzop-logo.png" alt="ZipZop Logo">
+                <div class="card-content">
+                    <img src="bestanden/Images/zipzop-logo.png" alt="ZipZop" class="company-logo">
+                    <h3>ZipZop</h3>
+                    <p>AR-brillen & innovatieve technologie</p>
+                    <a href="#" class="learn-more">Ontdek ZipZop <span class="material-icons">arrow_forward</span></a>
                 </div>
-                <h3>ZipZop</h3>
-                <p>Specialist in AR-brillen en innovatieve technologie</p>
-                <a href="#" class="learn-more">Meer over ZipZop</a>
             </div>
+            <!-- Herhaal voor andere bedrijven -->
+        </div>
+    </section>
 
-            <div class="company-card">
-                <div class="company-icon">
-                    <span class="material-icons">chat</span>
-                </div>
-                <h3>Pjotters-Chat</h3>
-                <p>Een voedig gratis chat platform</p>
-                <a href="#" class="learn-more">Meer over Pjotters-Chat</a>
-            </div>
-
-            <div class="company-card">
-                <div class="company-icon">
-                    <span class="material-icons">phone_iphone</span>
-                </div>
-                <h3>Pjotters-Apps</h3>
-                <p>De beste plek voor jouw iPhone apps</p>
-                <a href="#" class="learn-more">Meer over Pjotters-Apps</a>
-            </div>
-
-            <div class="company-card">
-                <div class="company-icon">
-                    <span class="material-icons">sports_esports</span>
-                </div>
-                <h3>Pjotters-Games</h3>
-                <p>Gemaakt met een oog voor leerlingen</p>
-                <a href="#" class="learn-more">Meer over Pjotters-Games</a>
-            </div>
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>Start Vandaag Nog</h2>
+            <p>Klaar om de toekomst van technologie te omarmen?</p>
+            <a href="register.html" class="cta-primary">Begin Nu</a>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-grid">
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p>Email: info@pjotters.com</p>
-                <p>Tel: +31 (0)6 12345678</p>
+                <p>info@pjotters.com</p>
+                <p>+31 (0)6 12345678</p>
             </div>
             <div class="footer-section">
-                <h4>Volg ons</h4>
+                <h4>Volg Ons</h4>
                 <div class="social-links">
-                    <a href="#"><span class="material-icons">facebook</span></a>
-                    <a href="#"><span class="material-icons">twitter</span></a>
-                    <a href="#"><span class="material-icons">linkedin</span></a>
+                    <a href="#" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                    <a href="#" aria-label="Twitter"><span class="material-icons">twitter</span></a>
+                    <a href="#" aria-label="LinkedIn"><span class="material-icons">linkedin</span></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Pjotters-Company. Alle rechten voorbehouden.</p>
+            <p>&copy; 2025 Pjotters-Company</p>
         </div>
     </footer>
 </body>
