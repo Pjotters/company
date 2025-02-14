@@ -1,22 +1,8 @@
 // Firebase configuratie
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
 import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
-const firebaseConfig = {
-    // Vul hier je Firebase configuratie in
-    apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
-    authDomain: "pjotters-company.firebaseapp.com",
-    projectId: "pjotters-company",
-    storageBucket: "pjotters-company.firebasestorage.app",
-    messagingSenderId: "64413422793",
-    appId: "1:64413422793:web:4025770645944818d6e918",
-    measurementId: "G-EEB3BWHK35"
-};
-
-// Initialiseer Firebase
-const app = initializeApp(firebaseConfig);
+// Gebruik de bestaande Firebase app instance
 const auth = getAuth(window.firebaseApp);
 const database = getDatabase(window.firebaseApp);
 
