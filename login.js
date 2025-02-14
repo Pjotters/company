@@ -1,13 +1,22 @@
-// Firebase configuratie
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
-// Gebruik de bestaande Firebase app instance
-const auth = getAuth(window.firebaseApp);
-const database = getDatabase(window.firebaseApp);
+// Firebase configuratie
+const firebaseConfig = {
+    apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
+    authDomain: "pjotters-company.firebaseapp.com",
+    databaseURL: "https://pjotters-company-default-rtdb.firebaseio.com",
+    projectId: "pjotters-company",
+    storageBucket: "pjotters-company.appspot.com",
+    messagingSenderId: "64413422793",
+    appId: "1:64413422793:web:4025770645944818d6e918"
+};
 
-// Zet persistence op LOCAL
-setPersistence(auth, browserLocalPersistence);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
 
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -55,6 +64,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
                 break;
             default:
                 errorMessage = 'Er is een fout opgetreden bij het inloggen.';
+                console.error(error);
         }
         alert(errorMessage);
     }
