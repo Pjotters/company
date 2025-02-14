@@ -1,33 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | Pjotters-Company</title>
+    <title>Terms of Service</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="privacy-terms.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Pjotters-Company</div>
+    <div class="tos-container">
+        <h1>Terms of Service</h1>
+        <div id="tosContent">
+            <h2>Inleiding</h2>
+            <p>Welkom bij Pjotters-Company. Door onze diensten te gebruiken, gaat u akkoord met deze voorwaarden. Lees ze zorgvuldig door.</p>
+            
+            <h2>Diensten</h2>
+            <p>Pjotters-Company biedt toegang tot verschillende bedrijven en diensten, waaronder chat, muziek, games, en augmented reality toepassingen.</p>
+            
+            <h2>Abonnementen</h2>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><strong>Basic</strong>: Gratis toegang tot basisfuncties en drie bedrijven.</li>
+                <li><strong>Pro</strong>: Uitgebreide toegang en prioriteitsondersteuning.</li>
+                <li><strong>Premium</strong>: Volledige toegang, VIP-ondersteuning en exclusieve content.</li>
             </ul>
-        </nav>
-    </header>
+            
+            <h2>Gebruikersverplichtingen</h2>
+            <p>Gebruikers moeten correcte informatie verstrekken en zich houden aan de gedragsregels. Misbruik van diensten is verboden.</p>
+            
+            <h2>Privacy en Gegevensbescherming</h2>
+            <p>We verzamelen en gebruiken persoonlijke gegevens volgens ons privacybeleid. We voldoen aan de AVG (Algemene Verordening Gegevensbescherming).</p>
+            
+            <h2>Aansprakelijkheid</h2>
+            <p>Pjotters-Company is niet aansprakelijk voor indirecte schade of verlies. Onze maximale aansprakelijkheid is beperkt tot het bedrag dat u aan ons heeft betaald.</p>
+            
+            <h2>Wijzigingen in de Diensten</h2>
+            <p>We behouden ons het recht voor om diensten te wijzigen of te beëindigen. Gebruikers worden op de hoogte gebracht van belangrijke wijzigingen.</p>
+            
+            <h2>Toepasselijk Recht</h2>
+            <p>Deze voorwaarden vallen onder de Nederlandse wetgeving en eventuele geschillen worden voorgelegd aan de bevoegde rechtbank in Nederland.</p>
+            
+            <h2>Contactinformatie</h2>
+            <p>Voor vragen of ondersteuning kunt u contact met ons opnemen via info@pjotters.com.</p>
+        </div>
+        <button id="toggleLanguageBtn">Switch to English</button>
+    </div>
 
-    <main>
-        <section class="content">
-            <h1>Terms of Service</h1>
-            <p>These Terms of Service govern your use of our website and services. By accessing or using the service, you agree to be bound by these terms.</p>
-            <!-- Add more content as needed -->
-        </section>
-    </main>
+    <script>
+        const tosContent = {
+            nl: document.getElementById('tosContent').innerHTML,
+            en: `
+                <h2>Introduction</h2>
+                <p>Welcome to Pjotters-Company. By using our services, you agree to these terms. Please read them carefully.</p>
+                
+                <h2>Services</h2>
+                <p>Pjotters-Company provides access to various companies and services, including chat, music, games, and augmented reality applications.</p>
+                
+                <h2>Subscriptions</h2>
+                <ul>
+                    <li><strong>Basic</strong>: Free access to basic features and three companies.</li>
+                    <li><strong>Pro</strong>: Extended access and priority support.</li>
+                    <li><strong>Premium</strong>: Full access, VIP support, and exclusive content.</li>
+                </ul>
+                
+                <h2>User Obligations</h2>
+                <p>Users must provide accurate information and adhere to the code of conduct. Misuse of services is prohibited.</p>
+                
+                <h2>Privacy and Data Protection</h2>
+                <p>We collect and use personal data according to our privacy policy. We comply with the GDPR (General Data Protection Regulation).</p>
+                
+                <h2>Liability</h2>
+                <p>Pjotters-Company is not liable for indirect damage or loss. Our maximum liability is limited to the amount you have paid us.</p>
+                
+                <h2>Changes to Services</h2>
+                <p>We reserve the right to modify or terminate services. Users will be notified of significant changes.</p>
+                
+                <h2>Applicable Law</h2>
+                <p>These terms are governed by Dutch law, and any disputes will be submitted to the competent court in the Netherlands.</p>
+                
+                <h2>Contact Information</h2>
+                <p>For questions or support, you can contact us at info@pjotters.com.</p>
+            `
+        };
 
-    <footer>
-        <p>&copy; 2023 Pjotters-Company. All rights reserved.</p>
-    </footer>
+        let currentLanguage = 'nl';
+
+        document.getElementById('toggleLanguageBtn').addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'nl' ? 'en' : 'nl';
+            document.getElementById('tosContent').innerHTML = tosContent[currentLanguage];
+            document.getElementById('toggleLanguageBtn').textContent = currentLanguage === 'nl' ? 'Switch to English' : 'Wissel naar Nederlands';
+        });
+    </script>
 </body>
 </html> 
