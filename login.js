@@ -6,7 +6,7 @@ import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.8.0
 const firebaseConfig = {
     apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
     authDomain: "pjotters-company.firebaseapp.com",
-    databaseURL: "https://pjotters-company-default-rtdb.europe-west1.firebasedatabase.app",
+    databaseURL: "https://pjotters-company-default-rtdb.europe-west1.firebasedatabase.app/",
     projectId: "pjotters-company",
     storageBucket: "pjotters-company.appspot.com",
     messagingSenderId: "64413422793",
