@@ -49,6 +49,9 @@ onAuthStateChanged(auth, async (user) => {
             accessibleCompanies.forEach(companyId => {
                 // Voeg logica toe om bedrijven weer te geven
             });
+
+            // Voorbeeld van het laden van statistieken
+            loadUserStats(userData);
         }
     } else {
         // Niet ingelogd, redirect naar login pagina
@@ -84,6 +87,12 @@ function loadDashboardData(userData) {
         div.innerHTML = `<span class="checkmark">✓</span> ${feature}`;
         featuresList.appendChild(div);
     });
+}
+
+// Voorbeeld van het laden van statistieken
+function loadUserStats(userData) {
+    document.getElementById('loginDays').textContent = userData.loginDays || 0;
+    document.getElementById('servicesUsed').textContent = userData.servicesUsed || 0;
 }
 
 document.querySelectorAll('.theme-button').forEach(button => {
