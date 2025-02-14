@@ -47,8 +47,11 @@ document.getElementById('registerForm').addEventListener('submit', async functio
                 plan: subscriptionPlans[subscription],
                 active: true
             },
+            accessibleCompanies: [],
             createdAt: new Date().toISOString()
         });
+        
+        updateAccessibleCompanies(user.uid, subscription);
         
         alert('Registratie succesvol! Je wordt nu doorgestuurd.');
         window.location.href = 'dashboard.html';
@@ -71,4 +74,18 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         }
         alert(errorMessage);
     }
-}); 
+});
+
+function updateAccessibleCompanies(userId, subscriptionType) {
+  let accessibleCompanies = [];
+  
+  if (subscriptionType === 'basic') {
+    accessibleCompanies = ['company1', 'company2', 'company3']; // Vervang door echte bedrijfs-ID's
+  } else if (subscriptionType === 'pro') {
+    accessibleCompanies = ['company1', 'company2', 'company3', 'company4', 'company5', 'company6', 'company7', 'company8', 'company9', 'company10'];
+  } else if (subscriptionType === 'premium') {
+    // Voeg alle bedrijfs-ID's toe
+  }
+  
+  set(ref(database, 'users/' + userId + '/accessibleCompanies'), accessibleCompanies);
+} 

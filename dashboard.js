@@ -32,7 +32,7 @@ onAuthStateChanged(auth, async (user) => {
             document.getElementById('userSubscription').textContent = userData.subscription.type;
             
             // Toon features based op abonnement
-            displayFeatures(userData.subscription.type);
+            loadDashboardData(userData);
 
             const activities = userData.activities || [];
             const activityList = document.getElementById('activityList');
@@ -40,6 +40,14 @@ onAuthStateChanged(auth, async (user) => {
                 const li = document.createElement('li');
                 li.textContent = activity;
                 activityList.appendChild(li);
+            });
+
+            const accessibleCompanies = userData.accessibleCompanies || [];
+
+            // Filter bedrijven op basis van toegankelijkheid
+            const companyList = document.getElementById('companyList');
+            accessibleCompanies.forEach(companyId => {
+                // Voeg logica toe om bedrijven weer te geven
             });
         }
     } else {
@@ -59,30 +67,17 @@ document.getElementById('logoutBtn').addEventListener('click', async () => {
 });
 
 // Helper functie om features te tonen
-function displayFeatures(subscriptionType) {
+function loadDashboardData(userData) {
     const featuresList = document.getElementById('featuresList');
     featuresList.innerHTML = ''; // Clear existing content
-    
+
     const features = {
-        basic: [
-            'Toegang tot basis content',
-            'Community forums'
-        ],
-        pro: [
-            'Alles van Basic',
-            'Priority support',
-            'Extra functies',
-            'Pro content'
-        ],
-        premium: [
-            'Alles van Pro',
-            'VIP support',
-            'Exclusieve content',
-            'Early access'
-        ]
+        basic: ['Toegang tot basis content', 'Community support', '3 gratis bedrijven'],
+        pro: ['Alles van Basic', 'Priority support', 'Extra functies', 'Pro content', '10 gratis bedrijven'],
+        premium: ['Alles van Pro', 'VIP support', 'Exclusieve content', 'Early access', 'toegang tot alle bedrijven']
     };
-    
-    const userFeatures = features[subscriptionType];
+
+    const userFeatures = features[userData.subscription.type];
     userFeatures.forEach(feature => {
         const div = document.createElement('div');
         div.className = 'feature-item';
