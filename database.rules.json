@@ -1,0 +1,24 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "public": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "premium_content": {
+      ".read": "auth != null && root.child('users').child(auth.uid).child('subscription').child('type').val() === 'premium'",
+      ".write": false
+    },
+    "pro_content": {
+      ".read": "auth != null && (root.child('users').child(auth.uid).child('subscription').child('type').val() === 'pro' || root.child('users').child(auth.uid).child('subscription').child('type').val() === 'premium')",
+      ".write": false
+    }
+  }
+} 
