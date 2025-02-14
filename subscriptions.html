@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnementen | Pjotters-Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="subscriptions.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="bestanden/Images/zipzop-logo.png" alt="Pjotters" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Inloggen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="subscription-hero">
+        <h1 data-aos="fade-up">Kies je Abonnement</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Ontdek welk plan het beste bij jou past</p>
+    </section>
+
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="card-header">
+                    <h3>Basis</h3>
+                    <div class="price">
+                        <span class="amount">€0</span>
+                        <span class="period">/maand</span>
+                    </div>
+                </div>
+                <ul class="features-list">
+                    <li><span class="material-icons">check</span>Basis toegang</li>
+                    <li><span class="material-icons">check</span>Beperkte functies</li>
+                    <li><span class="material-icons">check</span>Community support</li>
+                </ul>
+                <a href="register.html?plan=basic" class="select-plan">Start Gratis</a>
+            </div>
+
+            <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
+                <div class="popular-badge">Meest gekozen</div>
+                <div class="card-header">
+                    <h3>Pro</h3>
+                    <div class="price">
+                        <span class="amount">€9.99</span>
+                        <span class="period">/maand</span>
+                    </div>
+                </div>
+                <ul class="features-list">
+                    <li><span class="material-icons">check</span>Volledige toegang</li>
+                    <li><span class="material-icons">check</span>Priority support</li>
+                    <li><span class="material-icons">check</span>Extra functies</li>
+                    <li><span class="material-icons">check</span>API Toegang</li>
+                </ul>
+                <a href="register.html?plan=pro" class="select-plan">Kies Pro</a>
+            </div>
+
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-header">
+                    <h3>Premium</h3>
+                    <div class="price">
+                        <span class="amount">€19.99</span>
+                        <span class="period">/maand</span>
+                    </div>
+                </div>
+                <ul class="features-list">
+                    <li><span class="material-icons">check</span>Alles van Pro</li>
+                    <li><span class="material-icons">check</span>VIP support</li>
+                    <li><span class="material-icons">check</span>Exclusieve content</li>
+                    <li><span class="material-icons">check</span>Onbeperkt gebruik</li>
+                </ul>
+                <a href="register.html?plan=premium" class="select-plan">Kies Premium</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html> 
