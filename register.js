@@ -21,6 +21,16 @@ const subscriptionPlans = {
         name: 'Premium',
         price: 19.99,
         features: ['Alles van Pro', 'VIP support', 'Exclusieve content']
+    },
+    Team: {
+        name: 'Welkom bij het Pjotters Team',
+        price: 19.99,
+        features: ['jij bent lid van het team van Pjotters:', 'Je bent: "Admin"', 'Praat met je baas over wat je doel is']
+    },
+    Extra: {
+        name: 'Welkom bij Pjotters-Extra',
+        price: 19.99,
+        features: ['Toegang tot News-briefen (Normaal alleen Premium)', '1 extra bedrijf', 'Dit voordeel duurt 1 maand, daarna wordt u automatisch Pjotters-Basis']
     }
 };
 
