@@ -49,7 +49,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             console.log('Abonnement:', userData.subscription.type);
             
             // Redirect naar dashboard/homepage
-            window.location.href = 'index.html';
+            window.location.href = 'dashboard.html';
         }
         
     } catch (error) {

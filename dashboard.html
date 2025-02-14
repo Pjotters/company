@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Pjotters-Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
+    </script>
+    <script type="module" src="dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Pjotters-Company</div>
+            <ul>
+                <li><a href="#profile">Mijn Profiel</a></li>
+                <li><a href="#subscription">Abonnement</a></li>
+                <li><button id="logoutBtn">Uitloggen</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <h1>Welkom bij je Dashboard</h1>
+        <div class="dashboard-content">
+            <div class="user-info">
+                <h2>Mijn Account</h2>
+                <p>Email: <span id="userEmail"></span></p>
+                <p>Abonnement: <span id="userSubscription"></span></p>
+            </div>
+            <div class="subscription-features">
+                <h2>Jouw Functies</h2>
+                <div id="featuresList">
+                    <!-- Features worden dynamisch toegevoegd via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
