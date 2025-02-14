@@ -1,8 +1,8 @@
 // Firebase configuratie
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'firebase/auth';
-import { getDatabase, ref, get } from 'firebase/database';
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
 const firebaseConfig = {
     // Vul hier je Firebase configuratie in
@@ -17,8 +17,8 @@ const firebaseConfig = {
 
 // Initialiseer Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const database = getDatabase(app);
+const auth = getAuth(window.firebaseApp);
+const database = getDatabase(window.firebaseApp);
 
 // Zet persistence op LOCAL
 setPersistence(auth, browserLocalPersistence);
