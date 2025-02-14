@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #0071e3;
+    --secondary-color: #86868b;
+    --background-color: #ffffff;
+    --text-color: #1d1d1f;
+}
+
+.subscription-hero {
+    background: linear-gradient(135deg, #0071e3 0%, #00c6fb 100%);
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.subscription-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.pricing-section {
+    background: #f5f5f7;
+    padding: 80px 20px;
+    min-height: 60vh;
+}
+
+.pricing-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.popular {
+    border: 2px solid var(--primary-color);
+}
+
+.popular-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(45deg) translateX(30%) translateY(-50%);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.price {
+    margin: 30px 0;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.period {
+    color: var(--secondary-color);
+}
+
+.features-list {
+    text-align: left;
+    margin: 30px 0;
+}
+
+.features-list li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features-list .material-icons {
+    color: var(--primary-color);
+}
+
+.select-plan {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.select-plan:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,113,227,0.2);
+}
+
+@media (max-width: 768px) {
+    .subscription-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card {
+        padding: 30px 20px;
+    }
+} 
