@@ -1,4 +1,4 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
@@ -13,8 +13,8 @@ const firebaseConfig = {
     appId: "1:64413422793:web:4025770645944818d6e918"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Controleer of de app al bestaat
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 const auth = getAuth(app);
 const database = getDatabase(app);
 
