@@ -48,8 +48,6 @@
 
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-        import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
         const firebaseConfig = {
             apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
@@ -61,8 +59,9 @@
             appId: "1:64413422793:web:4025770645944818d6e918"
         };
 
+        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        export { app };
+        window.firebaseApp = app;
     </script>
     <script type="module" src="register.js"></script>
 </body>

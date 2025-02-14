@@ -1,8 +1,9 @@
 import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
-const auth = getAuth();
-const database = getDatabase();
+// Gebruik de bestaande Firebase app instance
+const auth = getAuth(window.firebaseApp);
+const database = getDatabase(window.firebaseApp);
 
 // Abonnement details
 const subscriptionPlans = {
