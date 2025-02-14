@@ -1,22 +1,8 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
 import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
-    authDomain: "pjotters-company.firebaseapp.com",
-    databaseURL: "https://pjotters-company-default-rtdb.firebaseio.com",
-    projectId: "pjotters-company",
-    storageBucket: "pjotters-company.firebasestorage.app",
-    messagingSenderId: "64413422793",
-    appId: "1:64413422793:web:4025770645944818d6e918",
-    measurementId: "G-EEB3BWHK35"
-};
-
-// Initialiseer Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const database = getDatabase(app);
+const auth = getAuth();
+const database = getDatabase();
 
 // Abonnement details
 const subscriptionPlans = {
