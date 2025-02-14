@@ -42,6 +42,10 @@
             </div>
         </div>
 
+        <div class="welcome-message">
+            <h2>Welkom, <span id="userName"></span>!</h2>
+        </div>
+
         <div class="dashboard-grid">
             <div class="dashboard-card subscription-card">
                 <div class="card-header">
@@ -77,6 +81,52 @@
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="recommended-services">
+            <h3>Aanbevolen Diensten</h3>
+            <div id="recommendedList">
+                <!-- Dynamisch gegenereerde aanbevelingen -->
+            </div>
+        </div>
+
+        <div class="user-stats">
+            <h3>Jouw Statistieken</h3>
+            <p>Aantal ingelogde dagen: <span id="loginDays"></span></p>
+            <p>Gebruikte diensten: <span id="servicesUsed"></span></p>
+        </div>
+
+        <div class="notifications">
+            <h3>Recente Notificaties</h3>
+            <ul id="notificationList">
+                <!-- Dynamisch gegenereerde notificaties -->
+            </ul>
+        </div>
+
+        <div class="activity-log">
+            <h3>Recente Activiteiten</h3>
+            <ul id="activityList">
+                <!-- Dynamisch gegenereerde activiteiten -->
+            </ul>
+        </div>
+
+        <div class="feedback-section">
+            <h3>Geef Feedback</h3>
+            <textarea id="feedback" placeholder="Jouw feedback..."></textarea>
+            <button class="submit-feedback">Verstuur</button>
+        </div>
+
+        <div class="calendar">
+            <h3>Jouw Kalender</h3>
+            <div id="calendarWidget">
+                <!-- Kalender widget -->
+            </div>
+        </div>
+
+        <div class="theme-selector">
+            <h3>Kies een Thema</h3>
+            <button class="theme-button" data-theme="light">Licht</button>
+            <button class="theme-button" data-theme="dark">Donker</button>
         </div>
     </main>
 

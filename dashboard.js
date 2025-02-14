@@ -6,7 +6,7 @@ const firebaseConfig = {
     // Je bestaande Firebase configuratie
     apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
     authDomain: "pjotters-company.firebaseapp.com",
-    databaseURL: "https://pjotters-company-default-rtdb.europe-west1.firebasedatabase.app/",
+    databaseURL: "https://pjotters-company-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "pjotters-company",
     storageBucket: "pjotters-company.appspot.com",
     messagingSenderId: "64413422793",
@@ -28,10 +28,19 @@ onAuthStateChanged(auth, async (user) => {
         if (snapshot.exists()) {
             const userData = snapshot.val();
             document.getElementById('userEmail').textContent = userData.email;
+            document.getElementById('userName').textContent = userData.name || 'Gebruiker';
             document.getElementById('userSubscription').textContent = userData.subscription.type;
             
             // Toon features based op abonnement
             displayFeatures(userData.subscription.type);
+
+            const activities = userData.activities || [];
+            const activityList = document.getElementById('activityList');
+            activities.forEach(activity => {
+                const li = document.createElement('li');
+                li.textContent = activity;
+                activityList.appendChild(li);
+            });
         }
     } else {
         // Niet ingelogd, redirect naar login pagina
@@ -80,4 +89,11 @@ function displayFeatures(subscriptionType) {
         div.innerHTML = `<span class="checkmark">✓</span> ${feature}`;
         featuresList.appendChild(div);
     });
-} 
+}
+
+document.querySelectorAll('.theme-button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const theme = e.target.getAttribute('data-theme');
+        document.body.setAttribute('data-theme', theme);
+    });
+}); 

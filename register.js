@@ -29,7 +29,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const subscriptionType = document.getElementById('subscription').value;
+    const name = document.getElementById('name').value;
+    const subscription = document.getElementById('subscription').value;
     
     try {
         // Maak gebruiker aan in Firebase Auth
@@ -39,10 +40,11 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         // Sla gebruikersgegevens op in Realtime Database
         await set(ref(database, 'users/' + user.uid), {
             email: email,
+            name: name,
             subscription: {
-                type: subscriptionType,
+                type: subscription,
                 startDate: new Date().toISOString(),
-                plan: subscriptionPlans[subscriptionType],
+                plan: subscriptionPlans[subscription],
                 active: true
             },
             createdAt: new Date().toISOString()
