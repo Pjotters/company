@@ -19,6 +19,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Navigation */
 .glass-nav {
     position: fixed;
     width: 100%;
@@ -27,12 +28,13 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
 }
 
 .nav-content {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,22 +53,29 @@ body {
     transition: color 0.3s ease;
 }
 
-.login-btn {
-    background: var(--primary-color);
-    color: white !important;
-    padding: 0.5rem 1.5rem;
-    border-radius: 980px;
-    transition: all 0.3s ease;
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 
+/* Hero Section */
 .hero {
     height: 100vh;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-overlay {
@@ -75,49 +84,126 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
-    max-width: 800px;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-.hero h1 {
-    font-size: 4.5rem;
+.hero-content h1 {
+    font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
+    margin-bottom: 1rem;
 }
 
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Buttons */
 .cta-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
 }
 
 .cta-primary {
     background: var(--primary-color);
     color: white;
     padding: 1rem 2rem;
-    border-radius: 980px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 113, 227, 0.2);
 }
 
 .cta-secondary {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     padding: 1rem 2rem;
-    border-radius: 980px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animated-text-delay {
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+    opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 113, 227, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 113, 227, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
 }
 
 /* Voeg de rest van de styling toe voor features, companies en footer */
@@ -189,17 +275,17 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
-    }
+.gradient-overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: translateY(-5px);
 } 

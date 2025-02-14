@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <nav class="glass-nav">
         <div class="nav-content">
-            <div class="logo">Pjotters</div>
+            <div class="logo">
+                <img src="bestanden/Images/zipzop-logo.png" alt="Pjotters" class="logo-img">
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#onze-bedrijven">Bedrijven</a></li>
@@ -23,15 +27,17 @@
     </nav>
 
     <section id="home" class="hero">
-        <video autoplay muted loop id="hero-video" playsinline>
-            <source src="bestanden/Video/ZipZop-5.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Innovatie begint hier</h1>
-            <p>Ontdek de toekomst van technologie met Pjotters-Company</p>
-            <div class="cta-buttons">
-                <a href="register.html" class="cta-primary">Start Gratis</a>
+        <div class="hero-background">
+            <video autoplay muted loop id="hero-video" playsinline>
+                <source src="bestanden/Video/ZipZop-5.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay gradient-overlay"></div>
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="animated-text">Innovatie begint hier</h1>
+            <p class="animated-text-delay">Ontdek de toekomst van technologie met Pjotters-Company</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="register.html" class="cta-primary pulse">Start Gratis</a>
                 <a href="#learn-more" class="cta-secondary">Meer Info</a>
             </div>
         </div>
@@ -39,18 +45,24 @@
 
     <section id="features" class="features">
         <div class="feature-grid">
-            <div class="feature-item">
-                <span class="material-icons">rocket_launch</span>
+            <div class="feature-item" data-aos="fade-up">
+                <div class="feature-icon">
+                    <span class="material-icons">rocket_launch</span>
+                </div>
                 <h3>Innovatief Platform</h3>
                 <p>Vooruitstrevende technologie voor jouw bedrijf</p>
             </div>
-            <div class="feature-item">
-                <span class="material-icons">security</span>
+            <div class="feature-item" data-aos="fade-up">
+                <div class="feature-icon">
+                    <span class="material-icons">security</span>
+                </div>
                 <h3>Veilig & Betrouwbaar</h3>
                 <p>State-of-the-art beveiliging voor jouw data</p>
             </div>
-            <div class="feature-item">
-                <span class="material-icons">support_agent</span>
+            <div class="feature-item" data-aos="fade-up">
+                <div class="feature-icon">
+                    <span class="material-icons">support_agent</span>
+                </div>
                 <h3>24/7 Support</h3>
                 <p>Altijd en overal ondersteuning</p>
             </div>
@@ -58,14 +70,19 @@
     </section>
 
     <section id="onze-bedrijven" class="companies">
-        <h2>Onze Innovaties</h2>
+        <h2 data-aos="fade-up">Onze Innovaties</h2>
         <div class="companies-grid">
-            <div class="company-card">
+            <div class="company-card" data-aos="fade-up">
                 <div class="card-content">
-                    <img src="bestanden/Images/zipzop-logo.png" alt="ZipZop" class="company-logo">
+                    <div class="company-logo-wrapper">
+                        <img src="bestanden/Images/zipzop-logo.png" alt="ZipZop" class="company-logo">
+                    </div>
                     <h3>ZipZop</h3>
                     <p>AR-brillen & innovatieve technologie</p>
-                    <a href="#" class="learn-more">Ontdek ZipZop <span class="material-icons">arrow_forward</span></a>
+                    <a href="#" class="learn-more">
+                        Ontdek ZipZop 
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
                 </div>
             </div>
             <!-- Herhaal voor andere bedrijven -->
@@ -100,5 +117,16 @@
             <p>&copy; 2025 Pjotters-Company</p>
         </div>
     </footer>
+
+    <!-- AOS init script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
 </body>
 </html> 

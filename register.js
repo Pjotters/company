@@ -3,16 +3,15 @@ import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com
 import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
 
 const firebaseConfig = {
-    // Vul hier je Firebase configuratie in
     apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
     authDomain: "pjotters-company.firebaseapp.com",
+    databaseURL: "https://pjotters-company-default-rtdb.firebaseio.com",
     projectId: "pjotters-company",
     storageBucket: "pjotters-company.firebasestorage.app",
     messagingSenderId: "64413422793",
     appId: "1:64413422793:web:4025770645944818d6e918",
     measurementId: "G-EEB3BWHK35"
 };
-
 
 // Initialiseer Firebase
 const app = initializeApp(firebaseConfig);
@@ -63,7 +62,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         });
         
         alert('Registratie succesvol! Je wordt nu doorgestuurd.');
-        window.location.href = 'index.html';
+        window.location.href = 'dashboard.html';
         
     } catch (error) {
         let errorMessage;
@@ -79,6 +78,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
                 break;
             default:
                 errorMessage = 'Er is een fout opgetreden bij het registreren.';
+                console.error(error);
         }
         alert(errorMessage);
     }

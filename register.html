@@ -6,17 +6,18 @@
     <title>Registreren | Pjotters-Company</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Pjotters-Company</div>
-            <ul>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">Pjotters</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="login.html">Inloggen</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <div class="login-container">
         <form class="login-form" id="registerForm">
@@ -44,10 +45,28 @@
             </div>
         </form>
     </div>
+
+    <!-- Firebase SDK -->
     <script type="module">
+        // Import the functions you need from the SDKs you need
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
         import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
         import { getDatabase } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
+            authDomain: "pjotters-company.firebaseapp.com",
+            databaseURL: "https://pjotters-company-default-rtdb.firebaseio.com",
+            projectId: "pjotters-company",
+            storageBucket: "pjotters-company.appspot.com",
+            messagingSenderId: "64413422793",
+            appId: "1:64413422793:web:4025770645944818d6e918",
+            measurementId: "G-EEB3BWHK35"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        window.app = app;
     </script>
     <script type="module" src="register.js"></script>
 </body>
