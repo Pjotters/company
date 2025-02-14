@@ -43,11 +43,14 @@ onAuthStateChanged(auth, async (user) => {
             });
 
             const accessibleCompanies = userData.accessibleCompanies || [];
-
-            // Filter bedrijven op basis van toegankelijkheid
             const companyList = document.getElementById('companyList');
+            companyList.innerHTML = ''; // Clear existing content
+
             accessibleCompanies.forEach(companyId => {
-                // Voeg logica toe om bedrijven weer te geven
+                const div = document.createElement('div');
+                div.className = 'company-item';
+                div.textContent = `Bedrijf: ${companyId}`; // Vervang met echte bedrijfsinformatie
+                companyList.appendChild(div);
             });
 
             // Voorbeeld van het laden van statistieken

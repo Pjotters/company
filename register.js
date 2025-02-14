@@ -80,11 +80,11 @@ function updateAccessibleCompanies(userId, subscriptionType) {
   let accessibleCompanies = [];
   
   if (subscriptionType === 'basic') {
-    accessibleCompanies = ['company1', 'company2', 'company3']; // Vervang door echte bedrijfs-ID's
+    accessibleCompanies = ['bedrijf1', 'bedrijf2', 'bedrijf3']; // Vervang door echte bedrijfs-ID's
   } else if (subscriptionType === 'pro') {
-    accessibleCompanies = ['company1', 'company2', 'company3', 'company4', 'company5', 'company6', 'company7', 'company8', 'company9', 'company10'];
+    accessibleCompanies = ['bedrijf1', 'bedrijf2', 'bedrijf3', 'bedrijf4', 'bedrijf5', 'bedrijf6', 'bedrijf7', 'bedrijf8', 'bedrijf9', 'bedrijf10'];
   } else if (subscriptionType === 'premium') {
-    // Voeg alle bedrijfs-ID's toe
+    accessibleCompanies = ['bedrijf1', 'bedrijf2', 'bedrijf3', 'bedrijf4', 'bedrijf5', 'bedrijf6', 'bedrijf7', 'bedrijf8', 'bedrijf9', 'bedrijf10', 'bedrijf11', 'bedrijf12']; // Voeg alle bedrijfs-ID's toe
   }
   
   set(ref(database, 'users/' + userId + '/accessibleCompanies'), accessibleCompanies);
