@@ -6,11 +6,11 @@ const firebaseConfig = {
     // Je bestaande Firebase configuratie
     apiKey: "AIzaSyBCXaYJI9dxwqKD1Qsb_9AOdsnVTPG2uHM",
     authDomain: "pjotters-company.firebaseapp.com",
+    databaseURL: "https://pjotters-company-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "pjotters-company",
-    storageBucket: "pjotters-company.firebasestorage.app",
+    storageBucket: "pjotters-company.appspot.com",
     messagingSenderId: "64413422793",
-    appId: "1:64413422793:web:4025770645944818d6e918",
-    measurementId: "G-EEB3BWHK35"
+    appId: "1:64413422793:web:4025770645944818d6e918"
 };
 
 // Initialiseer Firebase
