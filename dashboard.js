@@ -81,8 +81,8 @@ function loadDashboardData(userData) {
         Basic: ['Toegang tot basis content', 'Community support', '3 gratis bedrijven'],
         Pro: ['Alles van Basic', 'Priority support', 'Extra functies', 'Pro content', '10 gratis bedrijven'],
         Premium: ['Alles van Pro', 'VIP support', 'Exclusieve content', 'Early access', 'toegang tot alle bedrijven'],
-        PjottersMember: ['U krijg gratis 3 extra bedrijf', 'Dit account is 1 maand geldig', 'daarna wordt u automatisch: Basic', '6 gratis bedrijven'],
-        PjottersTeam: ['Welkom bij het Pjotters Team!', 'U Taken voor vandaag zijn:', 'Moderaiting', 'Overvieuw', 'U heeft de rank: Pjotters-Imp', 'Voor meer informatie, contacteer je werkgever!', 'Pjotters, Your free services!']
+        Extra: ['U krijg gratis 3 extra bedrijf', 'Dit account is 1 maand geldig', 'daarna wordt u automatisch: Basic', '6 gratis bedrijven'],
+       Team: ['Welkom bij het Pjotters Team!', 'U Taken voor vandaag zijn:', 'Moderaiting', 'Overvieuw', 'U heeft de rank: Pjotters-Imp', 'Voor meer informatie, contacteer je werkgever!', 'Pjotters, Your free services!']
     };
 
     const userFeatures = features[userData.subscription.type];
